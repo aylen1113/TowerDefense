@@ -1,19 +1,14 @@
 using UnityEngine;
 using System.Collections;
 
-
 public class EnemyMovement : MonoBehaviour
 {
-
     public Transform target;
-    private int wavepointIndex = 0;
-
+    private int waypointIndex = 0;
     public float speed = 10;
 
     void Start()
     {
-      
-
         target = Waypoints.points[0];
     }
 
@@ -26,19 +21,39 @@ public class EnemyMovement : MonoBehaviour
         {
             GetNextWaypoint();
         }
-
-        //enemy.speed = enemy.startSpeed;
     }
 
     void GetNextWaypoint()
     {
-        if (wavepointIndex >= Waypoints.points.Length - 1)
+        if (waypointIndex >= Waypoints.points.Length - 1)
         {
-            //EndPath();
+            EndPath();
             return;
         }
 
-        wavepointIndex++;
-        target = Waypoints.points[wavepointIndex];
+        waypointIndex++;
+        target = Waypoints.points[waypointIndex];
+    }
+
+    void EndPath()
+    {
+        // Decrease the EnemiesAlive count
+        WaveSpawner.EnemiesAlive--;
+        Destroy(gameObject);
+    }
+
+    // Optional: If the enemy takes damage and dies, also decrease the EnemiesAlive count
+    public void TakeDamage(float amount)
+    {
+        // Your logic to reduce health
+        // if (health <= 0f) {
+        //     Die();
+        // }
+    }
+
+    void Die()
+    {
+        WaveSpawner.EnemiesAlive--;
+        Destroy(gameObject);
     }
 }
