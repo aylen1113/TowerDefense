@@ -1,12 +1,11 @@
 using UnityEngine;
-using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
     public Transform target;
     private int waypointIndex = 0;
     public float speed = 10;
-    public float health = 100f; // Add health
+    public float health = 100f; 
 
     void Start()
     {

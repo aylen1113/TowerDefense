@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 using TMPro;
 
 public class WaveSpawner : MonoBehaviour
@@ -13,7 +12,6 @@ public class WaveSpawner : MonoBehaviour
     private float countdown = 2f;
     public TMP_Text waveCountdownText;
     public float spawnRange = 3f; // Maximum random offset for spawn positions
-    //public GameManager gameManager;
 
     private int waveIndex = 0;
 
@@ -24,14 +22,6 @@ public class WaveSpawner : MonoBehaviour
         {
             return;
         }
-
-        // Uncomment this if you want to stop spawning waves after the last wave
-        // if (waveIndex == waves.Length)
-        // {
-        //     gameManager.WinLevel();
-        //     this.enabled = false;
-        //     return;
-        // }
 
         // If the countdown is finished, start spawning the next wave
         if (countdown <= 0f)
@@ -51,11 +41,13 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        // Check if waveIndex is within the bounds of the waves array
+        // Ensure waveIndex is within bounds
         if (waveIndex >= waves.Length)
         {
             yield break; // Exit if no more waves
         }
+
+        Debug.Log("Spawning wave " + waveIndex);
 
         // Get the current wave
         Wave wave = waves[waveIndex];
@@ -70,12 +62,14 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(1f / wave.rate);
         }
 
-        // Move to the next wave
+        // Move to the next wave after spawning all enemies in the current wave
         waveIndex++;
     }
 
     void SpawnEnemy(GameObject enemyPrefab)
     {
+        Debug.Log("Spawning enemy");
+
         // Generate a random position around the spawn point
         Vector3 spawnPosition = spawnPoint.position + new Vector3(
             Random.Range(-spawnRange, spawnRange),
@@ -93,7 +87,6 @@ public class WaveSpawner : MonoBehaviour
             enemyScript.target = target;
         }
 
-        // Ensure the enemy has the "Enemy" tag
         enemy.tag = "Enemy";
     }
 }
