@@ -92,5 +92,8 @@ public class WaveSpawner : MonoBehaviour
         {
             enemyScript.target = target;
         }
+
+        // Ensure the enemy has the "Enemy" tag
+        enemy.tag = "Enemy";
     }
 }

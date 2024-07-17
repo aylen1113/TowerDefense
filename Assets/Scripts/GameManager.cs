@@ -1,43 +1,23 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; 
-using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static bool gameIsOver = false;
-    public GameObject gameOverUI;
-    public TMP_Text gameOverText; 
-
-    void Update()
-    {
-        if (gameIsOver)
-            return;
-
-        // Example condition to trigger game over
-        // You can set gameIsOver to true based on your own condition
-        // if (playerHealth <= 0)
-        // {
-        //     EndGame();
-        // }
-    }
+    private bool gameEnded = false;
 
     public void EndGame()
     {
-        gameIsOver = true;
-        gameOverUI.SetActive(true);
-     
+        if (gameEnded)
+            return;
+
+        gameEnded = true;
         Debug.Log("Game Over");
+     
+        Invoke("Restart", 2f); // Restart the game after a delay
     }
 
-    public void Restart()
+    void Restart()
     {
-        gameIsOver = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
-    }
-
-    public void Quit()
-    {
-        Debug.Log("Quit");
-        Application.Quit(); 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

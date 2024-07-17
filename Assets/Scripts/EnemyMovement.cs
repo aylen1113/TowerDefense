@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
     public Transform target;
     private int waypointIndex = 0;
     public float speed = 10;
+    public float health = 100f; // Add health
 
     void Start()
     {
@@ -37,18 +38,25 @@ public class EnemyMovement : MonoBehaviour
 
     void EndPath()
     {
-        // Decrease the EnemiesAlive count
         WaveSpawner.EnemiesAlive--;
+
+        // Trigger game over
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        if (gameManager != null)
+        {
+            gameManager.EndGame();
+        }
+
         Destroy(gameObject);
     }
 
-    // Optional: If the enemy takes damage and dies, also decrease the EnemiesAlive count
     public void TakeDamage(float amount)
     {
-        // Your logic to reduce health
-        // if (health <= 0f) {
-        //     Die();
-        // }
+        health -= amount;
+        if (health <= 0f)
+        {
+            Die();
+        }
     }
 
     void Die()

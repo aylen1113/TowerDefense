@@ -7,18 +7,19 @@ public class Bullet : MonoBehaviour
     private Transform target;
 
     public float speed = 70f;
-    // Start is called before the first frame update
+    public GameObject impactEffect; // Optional: to show an effect on impact
+    public float explosionRadius = 0f; // Set to > 0 for AoE damage
 
     public void Seek(Transform _target)
     {
         target = _target;
     }
+
     void Start()
     {
-        
+        // You can initialize any necessary variables here
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (target == null)
@@ -42,20 +43,52 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
+        // Optionally instantiate an impact effect
+        if (impactEffect != null)
+        {
+            Instantiate(impactEffect, transform.position, transform.rotation);
+        }
 
-        Debug.Log("hit");
-        //GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
-        //Destroy(effectIns, 5f);
+        if (explosionRadius > 0f)
+        {
+            Explode();
+        }
+        else
+        {
+            Damage(target);
+        }
 
-        //if (explosionRadius > 0f)
-        //{
-        //    Explode();
-        //}
-        //else
-        //{
-        //    Damage(target);
-        //}
-
-        //Destroy(gameObject);
+        Destroy(gameObject); // Destroy the bullet
     }
+
+    void Explode()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("Enemy"))
+            {
+                Damage(collider.transform);
+            }
+        }
     }
+
+    void Damage(Transform enemy)
+    {
+
+        EnemyMovement e = enemy.GetComponent<EnemyMovement>();
+        if (e != null)
+        {
+            e.TakeDamage(50); 
+        }
+    }
+
+    private void OnCollisionEnter(Collision collider)
+    {
+        if (gameObject.CompareTag("Enemy"))
+        {
+            HitTarget();
+        }
+    }
+}
+
