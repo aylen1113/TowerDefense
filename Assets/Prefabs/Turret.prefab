@@ -24,8 +24,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693482825144933920}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.33, y: 1.526, z: -1.32}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.3299997, y: 1.5260001, z: -1.3199999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,10 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de34d1e197488ff40b5e6f3b080b2a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 15
-  turnSpeed: 10
+  towerData: {fileID: 11400000, guid: 3bfdd83c669f2e5479c1d897cd77d07a, type: 2}
   partToRotate: {fileID: 2567980212198812949}
-  fireRate: 1
   bulletPrefab: {fileID: 4739053729171225421, guid: 54687e89797268543b4e029dd07e1042, type: 3}
   firePoint: {fileID: 2683399042108568154}
 --- !u!1 &2731661948980080276
@@ -109,8 +107,8 @@ Transform:
   m_GameObject: {fileID: 2731661948980080276}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4878028, y: 0.48780274, z: -0.51190674, w: -0.51190674}
-  m_LocalPosition: {x: -1.7200977, y: 1.6953928, z: -1.364687}
-  m_LocalScale: {x: 0.04413966, y: 0.044139665, z: 0.04413966}
+  m_LocalPosition: {x: -1.7200978, y: 1.6953927, z: -1.3646868}
+  m_LocalScale: {x: 0.04413966, y: 0.04413967, z: 0.04413966}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2567980212198812949}
@@ -280,8 +278,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1538632743401423334}
-  - {fileID: 5110907295471051693}
   - {fileID: 2683399042108568154}
+  - {fileID: 5110907295471051693}
+  - {fileID: 1538632743401423334}
   m_Father: {fileID: 3411069229054782265}
   m_LocalEulerAnglesHint: {x: 0, y: -2.762, z: 0}

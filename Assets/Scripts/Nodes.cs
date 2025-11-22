@@ -12,8 +12,12 @@ public class Nodes : MonoBehaviour
 
     private GameObject turret;
 
+    public bool isPath;
 
-   void Start()
+    public GameObject currentTurret;
+
+
+    void Start()
     {
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
@@ -21,13 +25,18 @@ public class Nodes : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (isPath) return;
+
         if (turret != null)
         {
             Debug.Log("cant build there");
             return;
         }
-        GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-       turret = Instantiate(turretToBuild, transform.position, transform.rotation);
+        // GameObject turretToBuild = BuildManager.Instance.GetTurretToBuild();
+        //turret = Instantiate(turretToBuild, transform.position, transform.rotation);
+
+
+        BuildManager.Instance.BuildTowerOn(this);
 
     }
     private void OnMouseEnter()

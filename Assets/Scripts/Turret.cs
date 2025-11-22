@@ -4,43 +4,48 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
+    public TowerType towerData;
+
     private Transform target;
 
-    public float range = 15f;
-    public float turnSpeed = 10f;
-
     public Transform partToRotate;
-
-    public float fireRate = 1f;
     private float fireCountdown = 0f;
 
     public GameObject bulletPrefab;
     public Transform firePoint;
 
-    // Start is called before the first frame update
     void Start()
     {
+        // Update target every 0.5s
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+
+        // Replace inspector values with TowerType values
+        if (towerData != null)
+        {
+            fireCountdown = 1f / towerData.fireRate;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (target == null)
             return;
 
+        // Rotate smoothly toward enemy
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        Vector3 rotation = Quaternion
+            .Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * towerData.turnSpeed)
+            .eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
+        // shooting
+        fireCountdown -= Time.deltaTime;
         if (fireCountdown <= 0f)
         {
             Shoot();
-            fireCountdown = 1f / fireRate;
+            fireCountdown = 1f / towerData.fireRate;
         }
-
-        fireCountdown -= Time.deltaTime;
     }
 
     void Shoot()
@@ -50,10 +55,11 @@ public class Turret : MonoBehaviour
 
         if (bullet != null)
         {
+            bullet.damage = towerData.damage; 
             bullet.Seek(target);
         }
 
-        Debug.Log("Shoot");
+        Debug.Log($"{towerData.towerName} fired!");
     }
 
     void UpdateTarget()
@@ -72,7 +78,7 @@ public class Turret : MonoBehaviour
             }
         }
 
-        if (nearestEnemy != null && shortestDistance <= range)
+        if (nearestEnemy != null && shortestDistance <= towerData.range)
         {
             target = nearestEnemy.transform;
         }
@@ -84,7 +90,9 @@ public class Turret : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
+        if (towerData == null) return;
+
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, towerData.range);
     }
 }

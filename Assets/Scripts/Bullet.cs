@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     public float speed = 70f;
     public GameObject impactEffect; // Optional: to show an effect on impact
     public float explosionRadius = 0f; // Set to > 0 for AoE damage
+    public float damage;
 
     public void Seek(Transform _target)
     {

@@ -62,5 +62,7 @@ public class EnemyMovement : MonoBehaviour
     {
         WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
+        //GameManager.money += enemyValue;
+
     }
 }
