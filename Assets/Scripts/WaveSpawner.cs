@@ -7,23 +7,38 @@ public class WaveSpawner : MonoBehaviour
     public static int EnemiesAlive = 0;
     public Wave[] waves;
     public Transform spawnPoint;
-    public Transform target; // Target for enemies to move towards
+    public Transform target; 
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
     public TMP_Text waveCountdownText;
-    public float spawnRange = 3f; // Maximum random offset for spawn positions
+    public float spawnRange = 3f; 
 
     private int waveIndex = 0;
 
+    public static int totalEnemiesKilled = 0;
+    public GameObject[] enemyTypes;
+
+    private bool allWavesSpawned = false;
+
+
     void Update()
     {
-        // If there are still enemies alive, do not proceed to spawn the next wave
+
+        if (allWavesSpawned)
+            return;
+
+
         if (EnemiesAlive > 0)
+            return;
+
+        if (waveIndex >= waves.Length)
         {
+            allWavesSpawned = true;
+            GameManager.Instance.OnWaveCompleted();  
             return;
         }
 
-        // If the countdown is finished, start spawning the next wave
+ 
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
@@ -31,40 +46,28 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
-        // Decrease the countdown timer
         countdown -= Time.deltaTime;
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
-
-        // Update the countdown display
-        waveCountdownText.text = string.Format("{0:00.00}", countdown);
+        waveCountdownText.text = countdown.ToString("00.00");
     }
 
     IEnumerator SpawnWave()
     {
-        // Ensure waveIndex is within bounds
-        if (waveIndex >= waves.Length)
-        {
-            yield break; // Exit if no more waves
-        }
+        GameManager.Instance.OnWaveCompleted(); 
 
-        Debug.Log("Spawning wave " + waveIndex);
-
-        // Get the current wave
         Wave wave = waves[waveIndex];
-
-        // Update the count of enemies alive
         EnemiesAlive = wave.count;
 
-        // Spawn all enemies in the current wave
         for (int i = 0; i < wave.count; i++)
         {
             SpawnEnemy(wave.enemy);
             yield return new WaitForSeconds(1f / wave.rate);
         }
 
-        // Move to the next wave after spawning all enemies in the current wave
         waveIndex++;
     }
+
+
 
     void SpawnEnemy(GameObject enemyPrefab)
     {
@@ -89,4 +92,15 @@ public class WaveSpawner : MonoBehaviour
 
         enemy.tag = "Enemy";
     }
+    GameObject GetEnemyForCurrentWave()
+    {
+        int index = 0;
+
+        if (waveIndex >= 3) index = 1;
+        if (waveIndex >= 5) index = 2;
+        if (waveIndex >= 10) index = 3;
+
+        return enemyTypes[index];
+    }
+
 }

@@ -5,7 +5,9 @@ public class EnemyMovement : MonoBehaviour
     public Transform target;
     private int waypointIndex = 0;
     public float speed = 10;
-    public float health = 100f; 
+    public float health = 100f;
+    public int enemyValue = 10;
+
 
     void Start()
     {
@@ -62,7 +64,8 @@ public class EnemyMovement : MonoBehaviour
     {
         WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
-        //GameManager.money += enemyValue;
+        WaveSpawner.totalEnemiesKilled++;
+        GameManager.Instance.AddMoney(enemyValue);
 
     }
 }
