@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         gameOverCanvas.SetActive(false);
+        totalWaves = FindObjectOfType<WaveSpawner>().waves.Length;
+
     }
     public void EndGame()
     {
