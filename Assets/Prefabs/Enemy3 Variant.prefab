@@ -22,11 +22,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2240021381581625522, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
       propertyPath: enemyValue
-      value: 30
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.9
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
       propertyPath: m_LocalPosition.y
@@ -64,12 +76,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2454876170047055063, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2432090755550338912, guid: 06ead054cacc94f49b967560f01e264a, type: 3}
     - target: {fileID: 4358208464534246121, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9bb924316f5615f4fa1d2a3f7e51d8c8, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 281165359682436839, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1096368089297426227, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8924327715196580138}
   m_SourcePrefab: {fileID: 100100000, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
+--- !u!1 &2110677903879248811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1096368089297426227, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
+  m_PrefabInstance: {fileID: 1332421901977947288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &8924327715196580138
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110677903879248811}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.5553323
+  m_Center: {x: 7.3999996, y: 1.5553179, z: -0.10000004}

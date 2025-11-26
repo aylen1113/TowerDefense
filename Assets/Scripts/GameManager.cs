@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject VictoryScreen;
 
 
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         gameOverCanvas.SetActive(true); 
+
         Time.timeScale = 0f;
     }
 

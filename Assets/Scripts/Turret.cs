@@ -16,10 +16,10 @@ public class Turret : MonoBehaviour
 
     void Start()
     {
-        // Update target every 0.5s
+       
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
 
-        // Replace inspector values with TowerType values
+   
         if (towerData != null)
         {
             fireCountdown = 1f / towerData.fireRate;
@@ -31,7 +31,7 @@ public class Turret : MonoBehaviour
         if (target == null)
             return;
 
-        // Rotate smoothly toward enemy
+
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion
@@ -39,7 +39,7 @@ public class Turret : MonoBehaviour
             .eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
-        // shooting
+    
         fireCountdown -= Time.deltaTime;
         if (fireCountdown <= 0f)
         {

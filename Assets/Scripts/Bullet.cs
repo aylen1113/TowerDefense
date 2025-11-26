@@ -7,8 +7,8 @@ public class Bullet : MonoBehaviour
     private Transform target;
 
     public float speed = 70f;
-    public GameObject impactEffect; // Optional: to show an effect on impact
-    public float explosionRadius = 0f; // Set to > 0 for AoE damage
+    public GameObject impactEffect; 
+    public float explosionRadius = 0f; 
     public float damage;
 
     public void Seek(Transform _target)
@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        // You can initialize any necessary variables here
+      
     }
 
     void Update()
@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
-        // Optionally instantiate an impact effect
+       
         if (impactEffect != null)
         {
             Instantiate(impactEffect, transform.position, transform.rotation);
@@ -59,7 +59,7 @@ public class Bullet : MonoBehaviour
             Damage(target);
         }
 
-        Destroy(gameObject); // Destroy the bullet
+        Destroy(gameObject); 
     }
 
     void Explode()

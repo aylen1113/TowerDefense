@@ -22,19 +22,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6242939093452223165, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
       propertyPath: enemyValue
-      value: 20
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7580926157519405751, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7580926157519405751, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7580926157519405751, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 7580926157519405751, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.9
+      value: 22.2
       objectReference: {fileID: 0}
     - target: {fileID: 7580926157519405751, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 11.1
       objectReference: {fileID: 0}
     - target: {fileID: 7580926157519405751, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11
+      value: 4.4
       objectReference: {fileID: 0}
     - target: {fileID: 7580926157519405751, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
       propertyPath: m_LocalRotation.w
@@ -64,6 +76,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7756394061318344408, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2432090755550338912, guid: 7a3f8510f289dda4cb28b7019289771d, type: 3}
     - target: {fileID: 8488775203659692262, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
