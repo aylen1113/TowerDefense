@@ -10,4 +10,5 @@ public class TowerType : ScriptableObject
     public float range;
     public int damage;
     public float turnSpeed;
+    public Sprite icon;
 }
