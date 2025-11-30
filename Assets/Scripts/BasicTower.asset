@@ -19,3 +19,4 @@ MonoBehaviour:
   range: 10
   damage: 10
   turnSpeed: 10
+  icon: {fileID: 21300000, guid: 4fd5bc92ed290f346a47ce2695181827, type: 3}

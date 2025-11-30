@@ -8,6 +8,9 @@ public class EnemyMovement : MonoBehaviour
     public float health = 100f;
     public int enemyValue = 10;
 
+    public ParticleSystem deathParticles;
+
+
 
     void Start()
     {
@@ -62,6 +65,9 @@ public class EnemyMovement : MonoBehaviour
 
     void Die()
     {
+        if (deathParticles != null)
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
+
         WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
         WaveSpawner.totalEnemiesKilled++;

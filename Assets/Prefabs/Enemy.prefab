@@ -122,3 +122,4 @@ MonoBehaviour:
   speed: 10
   health: 100
   enemyValue: 5
+  deathParticles: {fileID: 8241526142343974228, guid: 44ec9e1b0c5c33c469c0561202074ace, type: 3}

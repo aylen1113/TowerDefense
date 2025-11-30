@@ -32,6 +32,8 @@ public class BuildManager : MonoBehaviour
     public void SelectTower(TowerType tower)
     {
         towerToBuild = tower;
+        UIManager.Instance.UpdateSelectedTowerUI(tower);
+
     }
 
     public void BuildTowerOn(Nodes node)
@@ -41,6 +43,8 @@ public class BuildManager : MonoBehaviour
         if (!GameManager.Instance.CanAfford(towerToBuild.cost))
         {
             Debug.Log("Not enough money!");
+            UIManager.Instance.ShowNoMoneyMessage();
+
             return;
         }
 
