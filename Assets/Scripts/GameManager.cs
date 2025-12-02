@@ -44,8 +44,9 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Game");
+     
         Time.timeScale = 1f;
+        SceneManager.LoadScene("Game");
     }
 
     public bool CanAfford(int amount)

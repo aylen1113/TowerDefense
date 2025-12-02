@@ -20,6 +20,12 @@ public class WaveSpawner : MonoBehaviour
 
     private bool allWavesSpawned = false;
 
+    private void Awake()
+    {
+        allWavesSpawned = false;
+        waveIndex = 0;
+        EnemiesAlive = 0;
+    }
 
     void Update()
     {
@@ -34,11 +40,16 @@ public class WaveSpawner : MonoBehaviour
         if (waveIndex >= waves.Length)
         {
             allWavesSpawned = true;
-            GameManager.Instance.OnWaveCompleted();  
+
+            if (EnemiesAlive == 0)
+            {
+                GameManager.Instance.WinGame();   
+            }
+
             return;
         }
 
- 
+
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());

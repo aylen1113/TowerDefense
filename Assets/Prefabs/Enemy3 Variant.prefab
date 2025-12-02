@@ -26,27 +26,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
-      propertyPath: m_LocalPosition.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2342324529181026488, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
       propertyPath: m_LocalRotation.w
@@ -117,5 +117,5 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5553323
-  m_Center: {x: 7.3999996, y: 1.5553179, z: -0.10000004}
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}

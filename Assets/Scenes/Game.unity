@@ -1166,38 +1166,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy: {fileID: 5080715021009829180, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
-    count: 1
+    count: 2
     rate: 3
   - enemy: {fileID: 5080715021009829180, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
     count: 3
     rate: 3
   - enemy: {fileID: 5080715021009829180, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
-    count: 2
-    rate: 3
-  - enemy: {fileID: 1096368089297426227, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
-    count: 2
-    rate: 3
-  - enemy: {fileID: 1096368089297426227, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
-    count: 2
+    count: 4
     rate: 3
   - enemy: {fileID: 1096368089297426227, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
     count: 3
     rate: 3
-  - enemy: {fileID: 2110677903879248811, guid: 1c28f296e40dcbf45b7353be7c5a56e3, type: 3}
-    count: 3
+  - enemy: {fileID: 1096368089297426227, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
+    count: 4
+    rate: 3
+  - enemy: {fileID: 1096368089297426227, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
+    count: 5
     rate: 3
   - enemy: {fileID: 2110677903879248811, guid: 1c28f296e40dcbf45b7353be7c5a56e3, type: 3}
-    count: 3
+    count: 6
     rate: 3
   - enemy: {fileID: 2110677903879248811, guid: 1c28f296e40dcbf45b7353be7c5a56e3, type: 3}
-    count: 3
+    count: 7
     rate: 3
   - enemy: {fileID: 2110677903879248811, guid: 1c28f296e40dcbf45b7353be7c5a56e3, type: 3}
-    count: 3
+    count: 8
     rate: 3
-  - enemy: {fileID: 253306114439189713, guid: 19cb1621568380e4c92e3000b4482b1b, type: 3}
-    count: 1
-    rate: 1
+  - enemy: {fileID: 2110677903879248811, guid: 1c28f296e40dcbf45b7353be7c5a56e3, type: 3}
+    count: 9
+    rate: 3
+  - enemy: {fileID: 2110677903879248811, guid: 1c28f296e40dcbf45b7353be7c5a56e3, type: 3}
+    count: 10
+    rate: 3
   spawnPoint: {fileID: 514359382}
   target: {fileID: 7580926157519405751, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
   timeBetweenWaves: 3
@@ -1207,7 +1207,6 @@ MonoBehaviour:
   - {fileID: 5080715021009829180, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
   - {fileID: 1096368089297426227, guid: 85ab04f1e3a14414b903354a44e0c958, type: 3}
   - {fileID: 2110677903879248811, guid: 1c28f296e40dcbf45b7353be7c5a56e3, type: 3}
-  - {fileID: 253306114439189713, guid: 19cb1621568380e4c92e3000b4482b1b, type: 3}
 --- !u!4 &132067665
 Transform:
   m_ObjectHideFlags: 0
@@ -2323,6 +2322,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e3c5a8943eaaf0446bb94137fa7da101, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 654b435452970d8418a863299824124d, type: 2}
     - target: {fileID: 919132149155446097, guid: e3c5a8943eaaf0446bb94137fa7da101, type: 3}
       propertyPath: m_Name
       value: FBX_2019_tower
@@ -5641,7 +5644,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 513158615}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 132067667}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: EndGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &513158615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10663,7 +10678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -148, y: -447}
+  m_AnchoredPosition: {x: -148, y: -451.8}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1166461515
@@ -11115,14 +11130,14 @@ RectTransform:
   m_GameObject: {fileID: 1188827513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1166461514}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -18, y: -23}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188827515
@@ -11154,8 +11169,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14933,8 +14948,8 @@ Transform:
   m_GameObject: {fileID: 1602324247}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70713085, z: -0, w: 0.7070828}
-  m_LocalPosition: {x: 4.7, y: 2.5, z: 8.71}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.7, y: 2.5, z: 8.57}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 514359382}
@@ -15921,7 +15936,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc01a6b38230a4382721c2a4666777, type: 2}
+  - {fileID: 2100000, guid: 654b435452970d8418a863299824124d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17111,14 +17126,14 @@ RectTransform:
   m_GameObject: {fileID: 1885998380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 354232208}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -18.2, y: -23.5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885998382
@@ -17150,8 +17165,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -17692,14 +17707,14 @@ RectTransform:
   m_GameObject: {fileID: 1970516662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1578409709}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20.6, y: -15.8}
+  m_AnchoredPosition: {x: -17.4, y: -21.7}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1970516664
@@ -17731,8 +17746,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
