@@ -14,6 +14,8 @@ public class Turret : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
+    public AudioSource shootAudio;
+
     void Start()
     {
        
@@ -60,6 +62,8 @@ public class Turret : MonoBehaviour
         }
 
         Debug.Log($"{towerData.towerName} fired!");
+
+        shootAudio.Play();
     }
 
     void UpdateTarget()

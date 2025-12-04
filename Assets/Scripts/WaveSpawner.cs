@@ -64,14 +64,14 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        GameManager.Instance.OnWaveCompleted(); 
+        //GameManager.Instance.OnWaveCompleted(); 
 
         Wave wave = waves[waveIndex];
         EnemiesAlive = wave.count;
 
         for (int i = 0; i < wave.count; i++)
         {
-            SpawnEnemy(GetEnemyForCurrentWave());
+            SpawnEnemy(wave.enemy);
             yield return new WaitForSeconds(1f / wave.rate);
         }
 
@@ -103,15 +103,17 @@ public class WaveSpawner : MonoBehaviour
 
         enemy.tag = "Enemy";
     }
-    GameObject GetEnemyForCurrentWave()
-    {
-        int index = 0;
-
-        if (waveIndex >= 3) index = 1;
-        if (waveIndex >= 5) index = 2;
-        if (waveIndex >= 10) index = 3;
-
-        return enemyTypes[index];
-    }
-
 }
+//GameObject GetEnemyForCurrentWave()
+//{
+//    int index = 0;
+
+//    if (waveIndex >= 3) index = 1;
+//    if (waveIndex >= 5) index = 2;
+//    if (waveIndex >= 10) index = 3;
+
+//    index = Mathf.Clamp(index, 0, enemyTypes.Length - 1);
+
+//    return enemyTypes[index];
+//}
+

@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
 
     public ParticleSystem deathParticles;
 
+    public AudioClip deathSound;
 
 
     void Start()
@@ -67,6 +68,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if (deathParticles != null)
         Instantiate(deathParticles, transform.position, Quaternion.identity);
+
+        AudioSource.PlayClipAtPoint(deathSound, transform.position);
 
         WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);

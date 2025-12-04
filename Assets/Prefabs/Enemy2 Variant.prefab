@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6242939093452223165, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
       propertyPath: enemyValue
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7580926157519405751, guid: def93d9f0fc8e13468ef4e0746c60992, type: 3}
       propertyPath: m_LocalScale.x
