@@ -12,10 +12,18 @@ public class EnemyMovement : MonoBehaviour
 
     public AudioClip deathSound;
 
+    private float difficultyMultiplier;
+
 
     void Start()
     {
         target = Waypoints.points[0];
+
+        difficultyMultiplier = 1f + (WaveSpawner.currentWave * 0.15f);
+
+        speed *= difficultyMultiplier;
+        health *= difficultyMultiplier;
+        enemyValue = Mathf.RoundToInt(enemyValue * difficultyMultiplier);
     }
 
     void Update()
@@ -75,6 +83,7 @@ public class EnemyMovement : MonoBehaviour
         Destroy(gameObject);
         WaveSpawner.totalEnemiesKilled++;
         GameManager.Instance.AddMoney(enemyValue);
+
 
     }
 }

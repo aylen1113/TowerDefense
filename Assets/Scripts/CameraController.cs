@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour
 
     private CinemachineVirtualCamera vcam;
 
+
     void Start()
     {
         vcam = GetComponent<CinemachineVirtualCamera>();

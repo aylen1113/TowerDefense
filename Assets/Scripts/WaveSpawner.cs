@@ -20,6 +20,8 @@ public class WaveSpawner : MonoBehaviour
 
     private bool allWavesSpawned = false;
 
+    public static int currentWave = 0;
+
     private void Awake()
     {
         allWavesSpawned = false;
@@ -54,6 +56,8 @@ public class WaveSpawner : MonoBehaviour
         {
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
+
+            timeBetweenWaves = Mathf.Max(1.5f, timeBetweenWaves - 0.4f);
             return;
         }
 
@@ -102,6 +106,11 @@ public class WaveSpawner : MonoBehaviour
         }
 
         enemy.tag = "Enemy";
+
+        float difficultyMultiplier = 1f + (waveIndex * 0.15f); 
+
+        enemyScript.health *= difficultyMultiplier;
+        enemyScript.speed *= 1f + (waveIndex * 0.05f);
     }
 }
 //GameObject GetEnemyForCurrentWave()
